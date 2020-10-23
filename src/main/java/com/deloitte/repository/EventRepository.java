@@ -1,6 +1,6 @@
 package com.deloitte.repository;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -10,6 +10,7 @@ import com.deloitte.model.Event;
 
 public interface EventRepository extends MongoRepository<Event, Integer>{
 
-	@Query("{regDate : {$lt : ?0, $gte : ?1}}")
-	List<Event> findEventBetweenDateRange(Date next7days, Date currentDate);
+	@Query("{'regDate' : {$lte : ?0, $gt : ?1}}")
+	List<Event> findEventBetweenDateRange(LocalDate next7days, LocalDate currentDate);
+
 }

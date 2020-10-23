@@ -1,7 +1,7 @@
 package com.deloitte.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,55 +14,28 @@ public class Event {
 	private String eventLocation;
 	private String eventCity;
 	private String eventType;
-	private String regDate;
-	private int availabeSeats;
-	private String eventDate;
+	private Date startDate;
+	private Date endDate;
+	private List<EventTime> listOftimeslots;
 	
 	
 	
 	
+	public List<EventTime> getListOftimeslots() {
+		return listOftimeslots;
+	}
+
+
+
+
+	public void setListOftimeslots(List<EventTime> listOftimeslots) {
+		this.listOftimeslots = listOftimeslots;
+	}
+
+
+
+
 	
-	public String getEventDate() {
-		return eventDate;
-	}
-
-
-
-
-	public void setEventDate(String eventDate) {
-		this.eventDate = eventDate;
-	}
-
-
-
-
-	public String getRegDate() {
-		return regDate;
-	}
-
-
-
-
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
-	}
-
-
-
-
-	public int getAvailabeSeats() {
-		return availabeSeats;
-	}
-
-
-
-
-	public void setAvailabeSeats(int availabeSeats) {
-		this.availabeSeats = availabeSeats;
-	}
-
-
-
 
 	public String getImage() {
 		return image;
@@ -73,6 +46,34 @@ public class Event {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+
+
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+
+
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+
+
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+
+
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 
@@ -160,39 +161,6 @@ public class Event {
 		this.eventType = eventType;
 	}
 
-
-
-	/*
-	 * public LocalTime getStartTime() { return startTime; }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public void setStartTime(LocalTime startTime) { this.startTime = startTime; }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public LocalTime getEndTime() { return endTime; }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public void setEndTime(LocalTime endTime) { this.endTime = endTime; }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public LocalDate getDate() { return date; }
-	 * 
-	 
-
-
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
-*/
 
 
 	public String getQueries() {
